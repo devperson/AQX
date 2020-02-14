@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 
 using Aquamonix.Mobile.Lib.Utilities;
-
+using Foundation;
 using UIKit;
 
 namespace Aquamonix.Mobile.IOS.ViewControllers
 {
+	[Register("AquamonixNavController")]
 	public class AquamonixNavController : UINavigationController
 	{
 		//private Stack<UIViewController> _vcStack = new System.Collections.Generic.Stack<UIViewController>();
 
+	
 		public AquamonixNavController(UIViewController rootViewController) : base(rootViewController)
+		{
+		}
+
+		public AquamonixNavController(IntPtr handle) : base(handle)
 		{
 		}
 

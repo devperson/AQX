@@ -252,6 +252,7 @@
     </ImageAsset>
     <BundleResource Include="Resources\Images\Launch\Logo-ver-hi-res.png" />
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="ViewControllers\Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomUI\ListofprogrmasTableCell.cs" />
@@ -264,6 +265,7 @@
     <Compile Include="Model\Annotations\NextLineAnnotation.cs" />
     <Compile Include="Model\Annotations\PivotAnnotation.cs" />
     <Compile Include="Model\Annotations\ZeroAnnotation.cs" />
+    <Compile Include="SceneDelegate.cs" />
     <Compile Include="Utilities\FileUtilityIos.cs" />
     <Compile Include="ViewControllers\PivotControlViewController.cs" />
     <Compile Include="ViewControllers\PivotControlViewController.designer.cs">

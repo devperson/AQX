@@ -81,8 +81,7 @@ namespace Aquamonix.Mobile.IOS
 				action2 => BeginInvokeOnMainThread(new Action(action2))
 			);
 
-            var window = new UIWindow(UIScreen.MainScreen.Bounds);
-            	var navController = new Aquamonix.Mobile.IOS.ViewControllers.AquamonixNavController(new ViewControllers.StartViewController());
+   
 
             LogUtility.LogMessage(String.Format("Screen bounds {0} x {1} (h x w)", UIKit.UIScreen.MainScreen.NativeBounds.Size.Height, UIKit.UIScreen.MainScreen.NativeBounds.Size.Width), LogSeverity.Info);
 
@@ -99,10 +98,12 @@ namespace Aquamonix.Mobile.IOS
                 LogUtility.LogMessage(String.Format("KeyWindow SafeAreaInsets {0},{1} (top,bottom)", top, bottom), LogSeverity.Info);
             }
 
-            window.RootViewController = navController;
-			window.MakeKeyAndVisible();
+			//var window = new UIWindow(UIScreen.MainScreen.Bounds);
+			//var navController = new Aquamonix.Mobile.IOS.ViewControllers.AquamonixNavController(new ViewControllers.StartViewController());
+			//window.RootViewController = navController;
+			//window.MakeKeyAndVisible();
 
-			#if DETECT_SLEEP_CONDITION
+#if DETECT_SLEEP_CONDITION
 			CFNotificationCenter.Darwin.AddObserver(
 			name: SleepNotificationName,
 			objectToObserve: null,
@@ -117,7 +118,7 @@ namespace Aquamonix.Mobile.IOS
 				}); 
 			},
 			suspensionBehavior: CFNotificationSuspensionBehavior.DeliverImmediately);
-			#endif 
+#endif
 
 			return true;  
 		}
