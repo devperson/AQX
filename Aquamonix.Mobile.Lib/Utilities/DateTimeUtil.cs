@@ -46,8 +46,8 @@ namespace Aquamonix.Mobile.Lib.Utilities
 
 			if (value != null)
 			{
-				var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-				output = (long)DateTime.Now.Subtract(epoch).TotalSeconds;
+				var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);				
+				output = (long)value.Value.Subtract(epoch).TotalSeconds;
 			}
 
 			return output;

@@ -121,7 +121,10 @@ namespace Aquamonix.Mobile.IOS.ViewControllers
 				this.NavigationController.PopViewController(true);
 
 				if (this._waterSelectedStations != null)
-					this._waterSelectedStations(this._pumps, (int)this._intervalPickerView.Value.TotalMinutes);
+				{
+					var selectedPumps = this._pumps.Where(p => p.Selected).ToList();
+					this._waterSelectedStations(selectedPumps, (int)this._intervalPickerView.Value.TotalMinutes);
+				}
 			});
    		}
 
